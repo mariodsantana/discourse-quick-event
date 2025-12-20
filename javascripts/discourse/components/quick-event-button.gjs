@@ -25,7 +25,7 @@ export default class QuickEventButton extends Component {
   }
 
   get buttonTitle() {
-    return i18n(themePrefix("quick_event.button_title"));
+    return i18n("quick_event.button_title");
   }
 
   @action
