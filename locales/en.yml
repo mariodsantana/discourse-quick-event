@@ -1,0 +1,22 @@
+en:
+  js:
+    quick_event:
+      button_title: "Create a new event"
+      modal_title: "Create New Event"
+      title_label: "Event Title"
+      title_placeholder: "Enter event title..."
+      description_label: "Description"
+      description_placeholder: "Describe your event..."
+      start_label: "Start"
+      end_label: "End"
+      max_attendees_label: "Maximum Attendees"
+      max_attendees_placeholder: "Leave empty for unlimited"
+      create_button: "Create Event"
+      cancel_button: "Cancel"
+      required: "*"
+      info_text: "Events will be created in the configured category with <strong>%{status}</strong> status."
+      errors:
+        no_category: "Please configure a category in the theme component settings."
+        no_title: "Please enter an event title."
+        no_start_date: "Please select a start date."
+        create_failed: "Failed to create event. Please try again."

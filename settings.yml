@@ -1,0 +1,28 @@
+quick_event_category_id:
+  type: integer
+  default: 0
+  description: "The category ID where events will be created. Set this to your Events category ID."
+
+quick_event_default_status:
+  type: enum
+  default: "public"
+  choices:
+    - public
+    - private
+    - standalone
+  description: "Default event status when creating new events"
+
+quick_event_button_icon:
+  type: string
+  default: "calendar-plus"
+  description: "Font Awesome icon for the header button (without 'fa-' prefix)"
+
+quick_event_button_label:
+  type: string
+  default: "New Event"
+  description: "Label text for the header button (leave empty for icon-only)"
+
+quick_event_show_max_attendees:
+  type: bool
+  default: true
+  description: "Show the max attendees field in the event form"
