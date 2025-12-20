@@ -16,6 +16,11 @@ export default class QuickEventModal extends Component {
   @service router;
   @service siteSettings;
 
+  constructor() {
+    super(...arguments);
+    this.title = "Go Sailing with " + this.currentUser.username;
+  }
+
   @tracked title = "";
   @tracked description = "";
   @tracked startDate = "";
