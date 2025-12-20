@@ -3,7 +3,7 @@ import Component from "@glimmer/component";
 import { service } from "@ember/service";
 import { action } from "@ember/object";
 import DButton from "discourse/components/d-button";
-import { i18n } from "discourse-i18n";
+// import { i18n } from "discourse-i18n";
 import QuickEventModal from "./modal/quick-event-modal";
 
 export default class QuickEventButton extends Component {
@@ -25,7 +25,8 @@ export default class QuickEventButton extends Component {
   }
 
   get buttonTitle() {
-    return i18n("quick_event.button_title");
+    // return i18n("quick_event.button_title");
+    return "Create a new event";
   }
 
   @action
