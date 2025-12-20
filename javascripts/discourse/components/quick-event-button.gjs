@@ -36,7 +36,7 @@ export default class QuickEventButton extends Component {
 
   <template>
     {{#if this.shouldRender}}
-      <li class="quick-event-header-button">
+      <li class="quick-event-header-button" style="width: 5em;">
         <DButton
           @action={{this.openEventModal}}
           @icon={{this.buttonIcon}}
