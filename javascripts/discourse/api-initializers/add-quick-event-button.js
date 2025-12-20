@@ -1,4 +1,5 @@
 import { apiInitializer } from "discourse/lib/api";
+import QuickEventButton from "../components/quick-event-button";
 
 export default apiInitializer("1.0", (api) => {
   const currentUser = api.getCurrentUser();
@@ -8,5 +9,5 @@ export default apiInitializer("1.0", (api) => {
     return;
   }
 
-  api.headerIcons.add("quick-event-button");
+  api.headerIcons.add("quick-event-button", QuickEventButton);
 });
