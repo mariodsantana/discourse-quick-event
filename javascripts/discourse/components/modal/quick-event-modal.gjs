@@ -125,11 +125,6 @@ export default class QuickEventModal extends Component {
     return "Cancel";
   }
 
-  get infoText() {
-    // return htmlSafe(i18n("quick_event.info_text", { status: this.eventStatus }));
-    return htmlSafe(`Events will be created in the configured category with <strong>${this.eventStatus}</strong> status.`);
-  }
-
   formatDateTime(date, time) {
     if (!date) return null;
     // Format: YYYY-MM-DD HH:mm
@@ -339,10 +334,6 @@ export default class QuickEventModal extends Component {
               />
             </div>
           {{/if}}
-
-          <div class="quick-event-info">
-            <p>{{this.infoText}}</p>
-          </div>
         </div>
       </:body>
 
