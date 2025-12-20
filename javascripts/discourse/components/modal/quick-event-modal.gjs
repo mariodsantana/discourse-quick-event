@@ -8,7 +8,8 @@ import DModal from "discourse/components/d-modal";
 import DButton from "discourse/components/d-button";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
-import { i18n } from "discourse-i18n";
+import { i18n, themePrefix } from "discourse-i18n";
+import { htmlSafe } from "@ember/template";
 
 export default class QuickEventModal extends Component {
   @service currentUser;
@@ -47,13 +48,13 @@ export default class QuickEventModal extends Component {
 
   get validationMessage() {
     if (this.categoryId === 0) {
-      return i18n("quick_event.errors.no_category");
+      return i18n(themePrefix("quick_event.errors.no_category"));
     }
     if (!this.title.trim()) {
-      return i18n("quick_event.errors.no_title");
+      return i18n(themePrefix("quick_event.errors.no_title"));
     }
     if (!this.startDate) {
-      return i18n("quick_event.errors.no_start_date");
+      return i18n(themePrefix("quick_event.errors.no_start_date"));
     }
     return "";
   }
@@ -67,47 +68,51 @@ export default class QuickEventModal extends Component {
   }
 
   get modalTitle() {
-    return i18n("quick_event.modal_title");
+    return i18n(themePrefix("quick_event.modal_title"));
   }
 
   get titleLabel() {
-    return i18n("quick_event.title_label");
+    return i18n(themePrefix("quick_event.title_label"));
   }
 
   get titlePlaceholder() {
-    return i18n("quick_event.title_placeholder");
+    return i18n(themePrefix("quick_event.title_placeholder"));
   }
 
   get descriptionLabel() {
-    return i18n("quick_event.description_label");
+    return i18n(themePrefix("quick_event.description_label"));
   }
 
   get descriptionPlaceholder() {
-    return i18n("quick_event.description_placeholder");
+    return i18n(themePrefix("quick_event.description_placeholder"));
   }
 
   get startLabel() {
-    return i18n("quick_event.start_label");
+    return i18n(themePrefix("quick_event.start_label"));
   }
 
   get endLabel() {
-    return i18n("quick_event.end_label");
+    return i18n(themePrefix("quick_event.end_label"));
   }
 
   get maxAttendeesLabel() {
-    return i18n("quick_event.max_attendees_label");
+    return i18n(themePrefix("quick_event.max_attendees_label"));
   }
 
   get maxAttendeesPlaceholder() {
-    return i18n("quick_event.max_attendees_placeholder");
+    return i18n(themePrefix("quick_event.max_attendees_placeholder"));
   }
 
   get createButtonLabel() {
-    return i18n("quick_event.create_button");
+    return i18n(themePrefix("quick_event.create_button"));
   }
 
   get cancelButtonLabel() {
-    return i18n("quick_event.cancel_button");
+    return i18n(themePrefix("quick_event.cancel_button"));
+  }
+
+  get infoText() {
+    return htmlSafe(i18n(themePrefix("quick_event.info_text"), { status: this.eventStatus }));
   }
 
   formatDateTime(date, time) {
@@ -213,7 +218,7 @@ export default class QuickEventModal extends Component {
       }
     } catch (error) {
       popupAjaxError(error);
-      this.errorMessage = i18n("quick_event.errors.create_failed");
+      this.errorMessage = i18n(themePrefix("quick_event.errors.create_failed"));
     } finally {
       this.isSubmitting = false;
     }
@@ -320,7 +325,7 @@ export default class QuickEventModal extends Component {
           {{/if}}
 
           <div class="quick-event-info">
-            <p>Events will be created in the configured category with <strong>{{this.eventStatus}}</strong> status.</p>
+            <p>{{this.infoText}}</p>
           </div>
         </div>
       </:body>
@@ -328,14 +333,14 @@ export default class QuickEventModal extends Component {
       <:footer>
         <DButton
           @action={{this.createEvent}}
-          @label={{this.createButtonLabel}}
+          @translatedLabel={{this.createButtonLabel}}
           @icon="calendar-check"
           @disabled={{this.isSubmitting}}
           class="btn-primary"
         />
         <DButton
           @action={{@closeModal}}
-          @label={{this.cancelButtonLabel}}
+          @translatedLabel={{this.cancelButtonLabel}}
           @disabled={{this.isSubmitting}}
           class="btn-flat"
         />
