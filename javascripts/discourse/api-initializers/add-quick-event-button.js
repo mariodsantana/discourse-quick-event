@@ -8,5 +8,5 @@ export default apiInitializer("1.0", (api) => {
     return;
   }
 
-  api.addToHeaderIcons("quick-event-button");
+  api.headerIcons.add("quick-event-button");
 });
