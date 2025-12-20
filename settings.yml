@@ -19,7 +19,7 @@ quick_event_button_icon:
 
 quick_event_button_label:
   type: string
-  default: "New Event"
+  default: "Go Sailing!"
   description: "Label text for the header button (leave empty for icon-only)"
 
 quick_event_show_max_attendees:
