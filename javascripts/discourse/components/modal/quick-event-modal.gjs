@@ -341,7 +341,7 @@ export default class QuickEventModal extends Component {
         <DButton
           @action={{this.createEvent}}
           @translatedLabel={{this.createButtonLabel}}
-          @icon="calendar-check"
+          @icon="calendar-plus"
           @disabled={{this.isSubmitting}}
           class="btn-primary"
         />
