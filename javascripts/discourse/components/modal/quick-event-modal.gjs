@@ -77,7 +77,7 @@ export default class QuickEventModal extends Component {
 
   get modalTitle() {
     // return i18n("quick_event.modal_title");
-    return "Create New Event";
+    return "Go Sailing!";
   }
 
   get titleLabel() {
@@ -97,7 +97,7 @@ export default class QuickEventModal extends Component {
 
   get descriptionPlaceholder() {
     // return i18n("quick_event.description_placeholder");
-    return "Describe your event...";
+    return "Be honest!  Do you want an intense practice session, or a relaxing cruise?";
   }
 
   get startLabel() {
