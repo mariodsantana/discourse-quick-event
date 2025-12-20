@@ -1,4 +1,4 @@
-/* global settings */
+/* global settings, themePrefix */
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
@@ -8,7 +8,7 @@ import DModal from "discourse/components/d-modal";
 import DButton from "discourse/components/d-button";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
-import { i18n, themePrefix } from "discourse-i18n";
+import { i18n } from "discourse-i18n";
 import { htmlSafe } from "@ember/template";
 
 export default class QuickEventModal extends Component {

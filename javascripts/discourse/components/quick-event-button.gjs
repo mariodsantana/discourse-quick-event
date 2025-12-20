@@ -1,9 +1,9 @@
-/* global settings */
+/* global settings, themePrefix */
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
 import { action } from "@ember/object";
 import DButton from "discourse/components/d-button";
-import { i18n, themePrefix } from "discourse-i18n";
+import { i18n } from "discourse-i18n";
 import QuickEventModal from "./modal/quick-event-modal";
 
 export default class QuickEventButton extends Component {
