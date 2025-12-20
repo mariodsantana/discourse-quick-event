@@ -18,7 +18,7 @@ export default class QuickEventModal extends Component {
 
   constructor() {
     super(...arguments);
-    this.title = "Go Sailing with " + this.currentUser.username;
+    this.title = "Go Sailing with " + this.currentUser.name.split(" ")[0];
   }
 
   @tracked title = "";
