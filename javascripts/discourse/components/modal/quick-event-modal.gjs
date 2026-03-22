@@ -23,9 +23,9 @@ export default class QuickEventModal extends Component {
 
   @tracked title = "";
   @tracked description = "";
-  @tracked startDate = "";
+  @tracked startDate = this._tomorrowDate;
   @tracked startTime = "09:00";
-  @tracked endDate = "";
+  @tracked endDate = this._tomorrowDate;
   @tracked endTime = "16:00";
   @tracked maxAttendees = "";
   @tracked isSubmitting = false;
@@ -65,6 +65,15 @@ export default class QuickEventModal extends Component {
       return "Please select a start date.";
     }
     return "";
+  }
+
+  get _tomorrowDate() {
+    const d = new Date();
+    d.setDate(d.getDate() + 1);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
   }
 
   get todayDate() {
