@@ -19,6 +19,14 @@ export default class QuickEventModal extends Component {
   constructor() {
     super(...arguments);
     this.title = "Go Sailing with " + this.currentUser.name.split(" ")[0];
+
+    // Optional preset date (e.g. from clicking a day in the category calendar).
+    // Falls back to the tomorrow defaults when opened without a model (header button).
+    const presetDate = this.args.model?.startDate;
+    if (presetDate) {
+      this.startDate = presetDate;
+      this.endDate = presetDate;
+    }
   }
 
   @tracked title = "";
